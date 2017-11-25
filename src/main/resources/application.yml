@@ -1,15 +1,15 @@
 server:
     port: 9090
-    context-path: #/liuzh/
+    context-path: #/kami/
 
 logging:
     level:
         tk.mybatis: TRACE
 
 druid:
-    url: jdbc:mysql://192.168.16.137:3306/test
+    url: jdbc:mysql://10.20.11.193:3306/blog
     username: root
-    password:
+    password: kami123
     initial-size: 1
     min-idle: 1
     max-active: 20
@@ -26,12 +26,12 @@ spring:
 
 
 mybatis:
-    type-aliases-package: tk.mybatis.springboot.model
+    type-aliases-package: com.kami.entity
     mapper-locations: classpath:mapper/*.xml
 
 mapper:
     mappers:
-        - tk.mybatis.springboot.util.MyMapper
+        - com.kami.util.MyMapper
     not-empty: false
     identity: MYSQL
 

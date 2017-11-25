@@ -10,8 +10,8 @@
         <property name="beginningDelimiter" value="`"/>
         <property name="endingDelimiter" value="`"/>
 
-        <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
-            <property name="mappers" value="tk.mybatis.springboot.util.MyMapper"/>
+        <plugin type="com.kami.mapper.generator.MapperPlugin">
+            <property name="mappers" value="com.kami.util.MyMapper"/>
         </plugin>
 
         <jdbcConnection driverClass="${druid.driver-class}"
@@ -20,11 +20,11 @@
                         password="${druid.password}">
         </jdbcConnection>
 
-        <javaModelGenerator targetPackage="tk.mybatis.springboot.model" targetProject="src/main/java"/>
+        <javaModelGenerator targetPackage="com.kami.entity" targetProject="src/main/java"/>
 
         <sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources"/>
 
-        <javaClientGenerator targetPackage="tk.mybatis.springboot.mapper" targetProject="src/main/java"
+        <javaClientGenerator targetPackage="com.kami.mapper" targetProject="src/main/java"
                              type="XMLMAPPER"/>
 
         <table tableName="%">
